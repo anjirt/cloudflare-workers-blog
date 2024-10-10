@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>编辑文章 - CF-blog后台</title>
+    <title>Edit article - CF-blog backend</title>
     <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico" />
 	<link rel="shortcut icon" type="image/x-icon"  href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico"/>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
@@ -30,7 +30,7 @@
 	<div>
 		<ul id="myTab" class="nav nav-tabs">
 			<li class="active">
-				<a href="/admin/" >返回文章</a>
+				<a href="/admin/" >Return to article</a>
 			</li>
 		</ul>
 	</div>
@@ -39,7 +39,7 @@
 <div id="myTabContent" class="tab-content" style="padding-top: 60px;">
 
 		<div class="container">
-			<h3>编辑文章</h3>   
+			<h3>Edit article</h3>   
 
 			<form id="editForm" class="form-inline"  action="/" >
 
@@ -48,32 +48,32 @@
 					<input type="text" class="form-control" name="title" id="title" placeholder="标题" style="width: 800px;" required="true">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">特色图片</label>
+					<label for="exampleInputEmail2">Thumbnail</label>
 					<input type="url" class="form-control" style="width: 400px;"  name="img" id="img" placeholder="" >
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">永久链接</label>
+					<label for="exampleInputEmail2">Permalink</label>
 					<input type="text" class="form-control" name="link" id="link" placeholder="" style="vertical-align:left !important;" required="true">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">创建日期</label>
+					<label for="exampleInputEmail2">Creation date</label>
 					<input type="datetime-local" class="form-control" id="createDate" name="createDate" placeholder="" style="vertical-align:left !important;" required="true">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">分类</label>
+					<label for="exampleInputEmail2">Category</label>
 					<select class="selectpicker" multiple name="category[]" id="category">
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">标签</label>
-					<input type="text" class="form-control" name="tags" id="tags" placeholder="标签1,标签2">
+					<label for="exampleInputEmail2">Tags</label>
+					<input type="text" class="form-control" name="tags" id="tags" placeholder="Tags 1, Tags 2">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">权重</label>
-					<input type="text" class="form-control" name="priority" id="priority" value='0.5' placeholder="权重">
+					<label for="exampleInputEmail2">Priority</label>
+					<input type="text" class="form-control" name="priority" id="priority" value='0.5' placeholder="Priority">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">更新频率</label>
+					<label for="exampleInputEmail2">Change Frequency</label>
 					    <select class="form-control" id="changefreq" name="changefreq">
 						<option value="daily" >daily</option>
 						<option value="hourly" >hourly</option>
@@ -84,8 +84,8 @@
 						<option value="always" >always</option>
 					    </select>
 				</div>
-					<a tabindex="0"  role="button"  type="submit" id="btn_saveEdit" class="btn btn-default" onclick="saveEdit()">保存</a>
-					<a  type="submit" role="button" id="btn_delete" class="btn btn-warning" onclick="deleteArticle()">删除</a>
+					<a tabindex="0"  role="button"  type="submit" id="btn_saveEdit" class="btn btn-default" onclick="saveEdit()">Save</a>
+					<a  type="submit" role="button" id="btn_delete" class="btn btn-warning" onclick="deleteArticle()">Delete</a>
 				<div id="content"><textarea style="display:none;"></textarea></div>
 			</form>
 		</div>
@@ -106,7 +106,7 @@
 				//width  : "90%",
 				height : 640,
 				path   : "https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/",
-			        placeholder : "开始编辑...",
+			        placeholder : "Start editing...",
 				appendMarkdown : articleJson.contentMD, //编辑器赋值
 				saveHTMLToTextarea : true,
 				mode : "markdown",
@@ -148,7 +148,7 @@
     }
     //删除
     function deleteArticle(){
-        if (confirm("确定删除吗?删除后重新发布才能生效")==false){ 
+        if (confirm("Are you sure you want to delete it? It will take effect only after deleting and re-publishing.")==false){ 
             return false; 
           }
         $.ajax({
