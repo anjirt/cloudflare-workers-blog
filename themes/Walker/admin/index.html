@@ -174,6 +174,13 @@ For the front end to take effect, ctrl+F5 is required to force a refresh.
 		//获取菜单
 		var menuJson = <!--{menuJson}-->;
 		var linkJson = <!--{linkJson}-->;
+		var path = "https://cdn.jsdelivr.net/npm/editor.md@1.5.0/languages/en";
+        // not `var path = "/static/editor.md/languages/en.js";`
+        // which will cause a load `en.js.js` 404 problema
+        editormd.loadScript(path, function () {
+            editor.lang = editormd.defaults.lang;
+            editor.recreate();
+        });
 		var mdEditor = editormd("content", {
 				// width  : "90%",
 				 height : 640,
