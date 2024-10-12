@@ -59,110 +59,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
 :root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
 </style>
-<script type="text/javascript" src="https://gcore.jsdelivr.net/gh/anjirt/argon@master/files/argon_js_merged.js" id="argon_js_merged-js"></script>
-<script type="text/javascript" src="https://gcore.jsdelivr.net/gh/anjirt/argon@master/files/argon.min.js" id="argonjs-js"></script>
 <meta name="generator" content="WordPress 6.6.2" />
-		<script>
-		document.documentElement.classList.remove("no-js");
-		var argonConfig = {
-			wp_path: "/",
-			language: "en_US",
-			dateFormat: "YMD",
-							zoomify: false,
-						pangu: "false",
-							lazyload: {
-					threshold: 800,
-					effect: "fadeIn"
-				},
-						fold_long_comments: false,
-			fold_long_shuoshuo: false,
-			disable_pjax: false,
-			pjax_animation_durtion: 600,
-			headroom: "false",
-			waterflow_columns: "1",
-			code_highlight: {
-				enable: false,
-				hide_linenumber: false,
-				transparent_linenumber: false,
-				break_line: false			}
-		}
-	</script>
-	<script>
-		var darkmodeAutoSwitch = "false";
-		function setDarkmode(enable){
-			if (enable == true){
-				$("html").addClass("darkmode");
-			}else{
-				$("html").removeClass("darkmode");
-			}
-			$(window).trigger("scroll");
-		}
-		function toggleDarkmode(){
-			if ($("html").hasClass("darkmode")){
-				setDarkmode(false);
-				sessionStorage.setItem("Argon_Enable_Dark_Mode", "false");
-			}else{
-				setDarkmode(true);
-				sessionStorage.setItem("Argon_Enable_Dark_Mode", "true");
-			}
-		}
-		if (sessionStorage.getItem("Argon_Enable_Dark_Mode") == "true"){
-			setDarkmode(true);
-		}
-		function toggleDarkmodeByPrefersColorScheme(media){
-			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
-				return;
-			}
-			if (media.matches){
-				setDarkmode(true);
-			}else{
-				setDarkmode(false);
-			}
-		}
-		function toggleDarkmodeByTime(){
-			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
-				return;
-			}
-			let hour = new Date().getHours();
-			if (hour < 7 || hour >= 22){
-				setDarkmode(true);
-			}else{
-				setDarkmode(false);
-			}
-		}
-		if (darkmodeAutoSwitch == 'system'){
-			var darkmodeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-			darkmodeMediaQuery.addListener(toggleDarkmodeByPrefersColorScheme);
-			toggleDarkmodeByPrefersColorScheme(darkmodeMediaQuery);
-		}
-		if (darkmodeAutoSwitch == 'time'){
-			toggleDarkmodeByTime();
-		}
-		if (darkmodeAutoSwitch == 'alwayson'){
-			setDarkmode(true);
-		}
-
-		function toggleAmoledDarkMode(){
-			$("html").toggleClass("amoled-dark");
-			if ($("html").hasClass("amoled-dark")){
-				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "true");
-			}else{
-				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "false");
-			}
-		}
-		if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "true"){
-			$("html").addClass("amoled-dark");
-		}else if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "false"){
-			$("html").removeClass("amoled-dark");
-		}
-	</script>
-	<script>
-		if (navigator.userAgent.indexOf("Safari") !== -1 && navigator.userAgent.indexOf("Chrome") === -1){
-			$("html").addClass("using-safari");
-		}
-	</script>
-
-			<script src="https://gcore.jsdelivr.net/gh/anjirt/argon@master/files/smoothscroll1.js"></script>
 	 {{ &OPT.codeBeforHead }}
 	</head>
 
@@ -546,6 +443,113 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 				</main>
 			</div>
 		</div>
+
+
+<script type="text/javascript" src="https://gcore.jsdelivr.net/gh/anjirt/argon@master/files/argon_js_merged.js" id="argon_js_merged-js"></script>
+<script type="text/javascript" src="https://gcore.jsdelivr.net/gh/anjirt/argon@master/files/argon.min.js" id="argonjs-js"></script>
+
+		<script>
+		document.documentElement.classList.remove("no-js");
+		var argonConfig = {
+			wp_path: "/",
+			language: "en_US",
+			dateFormat: "YMD",
+							zoomify: false,
+						pangu: "false",
+							lazyload: {
+					threshold: 800,
+					effect: "fadeIn"
+				},
+						fold_long_comments: false,
+			fold_long_shuoshuo: false,
+			disable_pjax: false,
+			pjax_animation_durtion: 600,
+			headroom: "false",
+			waterflow_columns: "1",
+			code_highlight: {
+				enable: false,
+				hide_linenumber: false,
+				transparent_linenumber: false,
+				break_line: false			}
+		}
+	</script>
+	<script>
+		var darkmodeAutoSwitch = "false";
+		function setDarkmode(enable){
+			if (enable == true){
+				$("html").addClass("darkmode");
+			}else{
+				$("html").removeClass("darkmode");
+			}
+			$(window).trigger("scroll");
+		}
+		function toggleDarkmode(){
+			if ($("html").hasClass("darkmode")){
+				setDarkmode(false);
+				sessionStorage.setItem("Argon_Enable_Dark_Mode", "false");
+			}else{
+				setDarkmode(true);
+				sessionStorage.setItem("Argon_Enable_Dark_Mode", "true");
+			}
+		}
+		if (sessionStorage.getItem("Argon_Enable_Dark_Mode") == "true"){
+			setDarkmode(true);
+		}
+		function toggleDarkmodeByPrefersColorScheme(media){
+			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
+				return;
+			}
+			if (media.matches){
+				setDarkmode(true);
+			}else{
+				setDarkmode(false);
+			}
+		}
+		function toggleDarkmodeByTime(){
+			if (sessionStorage.getItem('Argon_Enable_Dark_Mode') == "false" || sessionStorage.getItem('Argon_Enable_Dark_Mode') == "true"){
+				return;
+			}
+			let hour = new Date().getHours();
+			if (hour < 7 || hour >= 22){
+				setDarkmode(true);
+			}else{
+				setDarkmode(false);
+			}
+		}
+		if (darkmodeAutoSwitch == 'system'){
+			var darkmodeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+			darkmodeMediaQuery.addListener(toggleDarkmodeByPrefersColorScheme);
+			toggleDarkmodeByPrefersColorScheme(darkmodeMediaQuery);
+		}
+		if (darkmodeAutoSwitch == 'time'){
+			toggleDarkmodeByTime();
+		}
+		if (darkmodeAutoSwitch == 'alwayson'){
+			setDarkmode(true);
+		}
+
+		function toggleAmoledDarkMode(){
+			$("html").toggleClass("amoled-dark");
+			if ($("html").hasClass("amoled-dark")){
+				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "true");
+			}else{
+				localStorage.setItem("Argon_Enable_Amoled_Dark_Mode", "false");
+			}
+		}
+		if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "true"){
+			$("html").addClass("amoled-dark");
+		}else if (localStorage.getItem("Argon_Enable_Amoled_Dark_Mode") == "false"){
+			$("html").removeClass("amoled-dark");
+		}
+	</script>
+	<script>
+		if (navigator.userAgent.indexOf("Safari") !== -1 && navigator.userAgent.indexOf("Chrome") === -1){
+			$("html").addClass("using-safari");
+		}
+	</script>
+
+			<script src="https://gcore.jsdelivr.net/gh/anjirt/argon@master/files/smoothscroll1.js"></script>
+	
 		<script src="https://gcore.jsdelivr.net/gh/anjirt/argon@master/files/argontheme.js"></script>
 						
 		
