@@ -541,14 +541,26 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 	
 	</article>
 		{{ /articleList }}
-		 <div class="post card bg-white shadow-sm border-0 post-preview text-center"> 
-     {{ #pageNewer }}
-			 <a href="{{ &url }}"><i class="fa fa-arrow-circle-o-left"></i> Previous page</a>
-     {{ /pageNewer }}
-     {{ #pageOlder }}
-			 <a href="{{ &url }}"><i class="fa fa-arrow-circle-o-right"></i> Next page</a>
-     {{ /pageOlder }}
-    </div>
+		 <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+	  {{ #pageNewer }}
+    <li class="page-item">
+      <a class="page-link" href="{{ &url }}">
+        <i class="fa fa-angle-left"></i>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+	  {{ /pageNewer }}
+	  {{ #pageOlder }}
+    <li class="page-item">
+      <a class="page-link" href="{{ &url }}">
+        <i class="fa fa-angle-right"></i>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+	  {{ /pageOlder }}
+  </ul>
+</nav>
 					<footer id="footer" class="site-footer card shadow-sm border-0">
 												<div>Theme <a href="https://github.com/solstice23/argon-theme" target="_blank"><strong>Argon</strong></a></div>
 					</footer>
