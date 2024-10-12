@@ -538,6 +538,23 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 	
 	</article>
 		{ /articleList }}
+		<div class="read-more"> 
+     {{ #pageNewer }}
+     <a href="{{ &url }}" class="page-btn"><i class="remixicon-arrow-left-line"></i>Previous page</a>
+     {{ /pageNewer }}
+     {{ #pageOlder }}
+     <a href="{{ &url }}" class="animated fadeIn font-extrabold text-gray-700 hover:text-gray-900 more-btn">Next page<i class="remixicon-arrow-right-line"></i></a>
+     {{ /pageOlder }}
+    </div> 
+    <div class="index-page"> 
+     <div class="pagination-container animated fadeIn"> 
+     {{ #pageNewer }}
+     <a href="{{ &url }}" class="page-btn"><i class="remixicon-arrow-left-line"></i>Previous page</a>
+     {{ /pageNewer }}
+     {{ #pageOlder }}
+     <a href="{{ &url }}" class="animated fadeIn font-extrabold text-gray-700 hover:text-gray-900 more-btn">Next page<i class="remixicon-arrow-right-line"></i></a>
+     {{ /pageOlder }}
+     </div> 
 					<footer id="footer" class="site-footer card shadow-sm border-0">
 												<div>Theme <a href="https://github.com/solstice23/argon-theme" target="_blank"><strong>Argon</strong></a></div>
 					</footer>
