@@ -522,7 +522,9 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 					<time title="Posted in {{ &createDate10 }}">{{ &createDate10 }}
 					</time>
 				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 230</div>						</br><div class="post-meta-detail post-meta-detail-words">
+					<i class="fa fa-eye" aria-hidden="true"></i>  {{ #category }}
+	<a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
+       {{ /category }}</div>						</br><div class="post-meta-detail post-meta-detail-words">
 		<i class="fa fa-file-word-o" aria-hidden="true"></i><span title="包含 15 行代码"> 422 words</span>
 		</div>
 		<div class="post-meta-devide">|</div>
