@@ -707,16 +707,16 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 </div>
 	<script>
     const postscountsdata = [{{ #widgetRecentlyList }}"{{ &id }}",{{ /widgetRecentlyList }}"hi"];
-    let postscounts = postscountsdata[0] - 1 + 1; // Menghitung panjang array dan menguranginya 1
-    document.getElementById("postscounts").innerHTML = postscounts; // Menampilkan jumlah
+    let postscounts = postscountsdata[0] - 1 + 1;
+    document.getElementById("postscounts").innerHTML = postscounts;
 
     const catcountsdata = [{{ #widgetCategoryList }}"{{&.}}",{{ /widgetCategoryList }}"hi"];
-    let catcounts = catcountsdata.length - 1; // Menghitung panjang array dan menguranginya 1
-    document.getElementById("catcounts").innerHTML = catcounts; // Menampilkan jumlah
+    let catcounts = catcountsdata.length - 1;
+    document.getElementById("catcounts").innerHTML = catcounts;
 
     const tagscountsdata = [{{ #widgetTagsList }}"{{&.}}",{{ /widgetTagsList }}"hi"];
-    let tagscounts = tagscountsdata.length - 1; // Menghitung panjang array dan menguranginya 1
-    document.getElementById("tagscounts").innerHTML = tagscounts; // Menampilkan jumlah
+    let tagscounts = tagscountsdata.length - 2;
+    document.getElementById("tagscounts").innerHTML = tagscounts;
 </script>
 <script type="text/javascript" src="https://yuyy.info/wp-content/plugins/page-links-to/dist/new-tab.js" id="page-links-to-js"></script>
   {{ &OPT.codeBeforBody }}
