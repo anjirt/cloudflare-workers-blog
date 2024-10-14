@@ -522,12 +522,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 	<main id="main" class="site-main article-list article-list-home" role="main">
 		{{ #articleList }}
 			<article class="post card bg-white shadow-sm border-0 post-preview" id="post-33" class="post-33 post type-post status-publish format-standard hentry category-uncategorized">
-		<script type='text/javascript'>
-			var thumbiddd{{&id}}="{{ &img }}";
-			if(thumbiddd{{&id}}){
-				document.write("<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='{{ &img }}' data-original='{{ &img }}' alt='thumbnail' style='opacity: 0;'></img></header>");
-			}
-		</script>
+				<header style='display:none{{ &img }}' id='dathumb{{&id}}' class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='{{ &img }}' data-original='{{ &img }}' alt='thumbnail' style='opacity: 0;'></img></header>
 	<header class="post-header text-center">
 				<a class="post-title" href="/article/{{&id}}/{{&link}}.html">{{ &title }}</a>
 		<div class="post-meta">
