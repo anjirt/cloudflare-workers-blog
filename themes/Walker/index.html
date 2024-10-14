@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<meta property="og:title" content="Yuyy - 博客">
+		<meta property="og:title" content="{{ &title }}">
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://yuyy.info">
 	
@@ -22,23 +22,22 @@
 	<meta name="theme-version" content="1.3.5">
 
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-			<title>Yuyy - 博客</title>
+			<title>{{ &title }}</title>
 
 		<!-- All in One SEO 4.7.3 - aioseo.com -->
-		<meta name="description" content="一名后端程序员（Java、Golang）" />
+		<meta name="description" content="{{ &OPT.siteDescription }}" />
 		<meta name="robots" content="max-image-preview:large" />
 		<link rel="canonical" href="https://yuyy.info" />
-		<link rel="next" href="https://yuyy.info/?paged=2" />
 		<meta name="generator" content="All in One SEO (AIOSEO) 4.7.3" />
 		<meta property="og:locale" content="zh_CN" />
-		<meta property="og:site_name" content="Yuyy -" />
+		<meta property="og:site_name" content="{{ &title }}" />
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Yuyy - 博客" />
-		<meta property="og:description" content="一名后端程序员（Java、Golang）" />
+		<meta property="og:title" content="{{ &title }}" />
+		<meta property="og:description" content="{{ &OPT.siteDescription }}" />
 		<meta property="og:url" content="https://yuyy.info" />
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:title" content="Yuyy - 博客" />
-		<meta name="twitter:description" content="一名后端程序员（Java、Golang）" />
+		<meta name="twitter:description" content="{{ &OPT.siteDescription }}" />
 		<script type="application/ld+json" class="aioseo-schema">
 			{"@context":"https:\/\/schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https:\/\/yuyy.info#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/yuyy.info\/#listItem","position":1,"name":"Home"}]},{"@type":"CollectionPage","@id":"https:\/\/yuyy.info#collectionpage","url":"https:\/\/yuyy.info","name":"Yuyy - \u535a\u5ba2","description":"\u4e00\u540d\u540e\u7aef\u7a0b\u5e8f\u5458\uff08Java\u3001Golang\uff09","inLanguage":"zh-CN","isPartOf":{"@id":"https:\/\/yuyy.info\/#website"},"breadcrumb":{"@id":"https:\/\/yuyy.info#breadcrumblist"},"about":{"@id":"https:\/\/yuyy.info\/#person"}},{"@type":"Person","@id":"https:\/\/yuyy.info\/#person","name":"Yuyy"},{"@type":"WebSite","@id":"https:\/\/yuyy.info\/#website","url":"https:\/\/yuyy.info\/","name":"Yuyy","inLanguage":"zh-CN","publisher":{"@id":"https:\/\/yuyy.info\/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/yuyy.info\/?s={search_term_string}"},"query-input":"required name=search_term_string"}}]}
 		</script>
@@ -181,6 +180,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 	</script>
 
 			<script src="https://yuyy.info/wp-content/themes/argon/assets/vendor/smoothscroll/smoothscroll1.js"></script>
+	{{ &OPT.codeBeforHead }}
 	</head>
 
 <script>var _hmt = _hmt || [];
@@ -218,7 +218,7 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="navbar-brand mr-0">
-															<a class="navbar-brand navbar-title" href="https://yuyy.info"></a>
+															<a class="navbar-brand navbar-title" href="/"></a>
 				</div>
 				<div class="navbar-collapse collapse" id="navbar_global">
 					<div class="navbar-collapse-header">
@@ -241,9 +241,9 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 					<ul class='navbar-nav navbar-nav-hover align-items-lg-center'>
 
 										<li class='nav-item'>
-											<a href='https://yuyy.info/' class='nav-link' target='' title=''>
+											<a href='/' class='nav-link' target='' title=''>
 										  		<i class='ni ni-book-bookmark d-lg-none'></i>
-												<span class='nav-link-inner--text'><i class="fa fa-home"></i> 首页</span>
+												<span class='nav-link-inner--text'><i class="fa fa-home"></i> Home</span>
 										  </a>
 </li>
 
@@ -658,20 +658,23 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 			</li></ol></div></aside>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main article-list article-list-home" role="main">
+		{{ #articleList }}
 			<article class="post card bg-white shadow-sm border-0 post-preview post-preview-layout-3" id="post-2283" class="post-2283 post type-post status-publish format-standard hentry category-74">
-		<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='https://bed.yuyy.info:8088/i/202409211616050.jpg' alt='thumbnail' style='opacity: 0;'></img></header>		<header class="post-header">
-			<a class="post-title" href="https://yuyy.info/?p=2283">如何debug minikube里的golang容器？</a>
+		<script type='text/javascript'>
+			var thumbiddd{{&id}}="{{ &img }}";
+			if(thumbiddd{{&id}}){
+				document.write("<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='{{ &img }}' data-original='{{ &img }}' alt='thumbnail' style='opacity: 0;'></img></header>");
+			}
+		</script>
+				<header class="post-header">
+			<a class="post-title" href="/article/{{&id}}/{{&link}}.html">{{ &title }}</a>
 			<div class="post-meta">
-				<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 142</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=74" target="_blank" class="post-meta-detail-catagory-link">云原生</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
+				<div class="post-meta-detail post-meta-detail-categories">
+					{{ #category }}
+				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="/category/{{&.}}" target="_blank" class="post-meta-detail-catagory-link">{{&.}}</a>
+				{{ /category }}</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
 					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-9-21 16:35:07 | 编辑于 2024-9-21 16:35:07">2024-9-21 16:35
-					</time>
-				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-edittime">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-9-21 16:35:07 | 编辑于 2024-9-21 16:35:07">2024-9-21 16:35
+					<time title="Posted at {{ &createDate10 }}">{{ &createDate10 }}
 					</time>
 				</div>								</br><div class="post-meta-detail post-meta-detail-words">
 		<i class="fa fa-file-word-o" aria-hidden="true"></i><span title="包含 5 行代码"> 1017 字</span>
@@ -685,270 +688,11 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 		</header>
 
 				<div class="post-content">
-			问题背景 在学习开源项目时，很多时候光看代码是搞不清楚实际运行时会走哪个逻辑分支，或者无法推测方法参数值。最简单的办法是 debug，熟悉某个功能的执行流程。 我们通常用 delve 去 debug golang 程序，但是很多云原生项目运行在 k8s 环境里，在本地我们可以用 minikube 来模拟 k8s。两者结合产生新问题：如何 debug&hellip;		</div>
+			{{ &contentText }}		</div>
 	
-	</article><article class="post card bg-white shadow-sm border-0 post-preview post-preview-layout-3" id="post-2276" class="post-2276 post type-post status-publish format-standard hentry category-uncategorized">
-		<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='https://bed.yuyy.info:8088/i/202409141457913.png' alt='thumbnail' style='opacity: 0;'></img></header>		<header class="post-header">
-			<a class="post-title" href="https://yuyy.info/?p=2276">重复创建软链接产生的奇怪现象</a>
-			<div class="post-meta">
-				<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 354</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=1" target="_blank" class="post-meta-detail-catagory-link">日常</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-8-17 17:43:38 | 编辑于 2024-9-14 15:06:17">2024-8-17 17:43
-					</time>
-				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-edittime">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-8-17 17:43:38 | 编辑于 2024-9-14 15:06:17">2024-9-14 15:06
-					</time>
-				</div>								</br><div class="post-meta-detail post-meta-detail-words">
-		<i class="fa fa-file-word-o" aria-hidden="true"></i><span title="包含 95 行代码"> 1831 字</span>
-		</div>
-		<div class="post-meta-devide">|</div>
-		<div class="post-meta-detail post-meta-detail-words">
-			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-			12 分钟
-		</div>
-				</div>
-		</header>
-
-				<div class="post-content">
-			问题现象 当前有个目录 a，需要对其创建一个软链接 b。 tree . `-- a |-- a1.txt `-- a2.txt 1 directory, 2 files 第一次执行ln -s a b 成功执行，符合预期 tree . |-- a | |-- a1.txt | `-- a2.txt `-- b -> a 2 directories, &hellip;		</div>
-	
-	</article><article class="post card bg-white shadow-sm border-0 post-preview post-preview-layout-3" id="post-2264" class="post-2264 post type-post status-publish format-standard hentry category-go-">
-		<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='https://bed.yuyy.info:8088/i/202407140958634.png' alt='thumbnail' style='opacity: 0;'></img></header>		<header class="post-header">
-			<a class="post-title" href="https://yuyy.info/?p=2264">Golang面试题</a>
-			<div class="post-meta">
-				<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 573</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=75" target="_blank" class="post-meta-detail-catagory-link">Go 基础</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-7-13 19:19:14 | 编辑于 2024-7-14 10:03:56">2024-7-13 19:19
-					</time>
-				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-edittime">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-7-13 19:19:14 | 编辑于 2024-7-14 10:03:56">2024-7-14 10:03
-					</time>
-				</div>								</br><div class="post-meta-detail post-meta-detail-words">
-		<i class="fa fa-file-word-o" aria-hidden="true"></i><span> 5214 字</span>
-		</div>
-		<div class="post-meta-devide">|</div>
-		<div class="post-meta-detail post-meta-detail-words">
-			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-			21 分钟
-		</div>
-				</div>
-		</header>
-
-				<div class="post-content">
-			Go基础 切片 通过 make 方法去声明一个 int 32 类型的一个slice，指定它的长度为10，容量为20。那么对于这样生成的一个变量，它在内存当中占据多大的空间？ 切片对象占用内存大小：int 类型的 cap、len 字段，一个底层数组的指针。8+8+8=24 字节 底层数组占用内存大小：int32 类型，长度为 20 的数组。4*20=&hellip;		</div>
-	
-	</article><article class="post card bg-white shadow-sm border-0 post-preview post-preview-layout-3" id="post-2262" class="post-2262 post type-post status-publish format-standard hentry category-74">
-		<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='https://bed.yuyy.info:8088/i/202407140958636.png' alt='thumbnail' style='opacity: 0;'></img></header>		<header class="post-header">
-			<a class="post-title" href="https://yuyy.info/?p=2262">K8s面试题</a>
-			<div class="post-meta">
-				<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 579</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=74" target="_blank" class="post-meta-detail-catagory-link">云原生</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-7-13 19:12:57 | 编辑于 2024-7-14 10:06:19">2024-7-13 19:12
-					</time>
-				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-edittime">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-7-13 19:12:57 | 编辑于 2024-7-14 10:06:19">2024-7-14 10:06
-					</time>
-				</div>								</br><div class="post-meta-detail post-meta-detail-words">
-		<i class="fa fa-file-word-o" aria-hidden="true"></i><span> 2046 字</span>
-		</div>
-		<div class="post-meta-devide">|</div>
-		<div class="post-meta-detail post-meta-detail-words">
-			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-			9 分钟
-		</div>
-				</div>
-		</header>
-
-				<div class="post-content">
-			K8s 如何通过 kubeproxy 保证两个 Pod 之间的相互通信？ kubeproxy 会监听 pod 的变化，在 node 上配置 iptables规则，将访问的 service ip，做 DNAT，转到 service 负载均衡的endpoint ip。但是 iptables 查找负载均衡的 endpoint 是 O(n)复杂度，当集群 &hellip;		</div>
-	
-	</article><article class="post card bg-white shadow-sm border-0 post-preview post-preview-layout-3" id="post-2258" class="post-2258 post type-post status-publish format-standard hentry category-91">
-		<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='https://bed.yuyy.info:8088/i/202408101727671.png' alt='thumbnail' style='opacity: 0;'></img></header>		<header class="post-header">
-			<a class="post-title" href="https://yuyy.info/?p=2258">程序员办公用品推荐</a>
-			<div class="post-meta">
-				<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 742</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=91" target="_blank" class="post-meta-detail-catagory-link">我的好物推荐</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-6-30 17:35:05 | 编辑于 2024-8-10 17:30:47">2024-6-30 17:35
-					</time>
-				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-edittime">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-6-30 17:35:05 | 编辑于 2024-8-10 17:30:47">2024-8-10 17:30
-					</time>
-				</div>								</br><div class="post-meta-detail post-meta-detail-words">
-		<i class="fa fa-file-word-o" aria-hidden="true"></i><span> 673 字</span>
-		</div>
-		<div class="post-meta-devide">|</div>
-		<div class="post-meta-detail post-meta-detail-words">
-			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-			3 分钟
-		</div>
-				</div>
-		</header>
-
-				<div class="post-content">
-			20240810更新 降噪耳机 降噪耳机是我觉得买得比较值的电子产品，因为我经常用到。在前一家公司时，每天午休要用。而现在因团队部分同事在其他城市，经常需要线上会议沟通，也是会用到耳机的。另外在通勤的路上，回家的飞机上，去旅游坐的大巴车上都会用到。总之降噪耳机对于我来说是很实用的，并且还能提升幸福感。午休时带上耳机、眼罩，睡眠质量杠杠的。 因使用频&hellip;		</div>
-	
-	</article><article class="post card bg-white shadow-sm border-0 post-preview post-preview-layout-3" id="post-2256" class="post-2256 post type-post status-publish format-standard hentry category-91">
-		<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='https://bed.yuyy.info:8088/i/202406301617970.png' alt='thumbnail' style='opacity: 0;'></img></header>		<header class="post-header">
-			<a class="post-title" href="https://yuyy.info/?p=2256">Chrome 插件推荐</a>
-			<div class="post-meta">
-				<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 683</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=91" target="_blank" class="post-meta-detail-catagory-link">我的好物推荐</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-6-30 17:03:46 | 编辑于 2024-6-30 17:03:46">2024-6-30 17:03
-					</time>
-				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-edittime">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-6-30 17:03:46 | 编辑于 2024-6-30 17:03:46">2024-6-30 17:03
-					</time>
-				</div>								</br><div class="post-meta-detail post-meta-detail-words">
-		<i class="fa fa-file-word-o" aria-hidden="true"></i><span> 553 字</span>
-		</div>
-		<div class="post-meta-devide">|</div>
-		<div class="post-meta-detail post-meta-detail-words">
-			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-			3 分钟
-		</div>
-				</div>
-		</header>
-
-				<div class="post-content">
-			OneTab 标签页打开太多的情况下，一键关闭并整理到列表。后续用到哪个标签页再重新打开。 关闭浏览器时，很多标签页并不想丢弃，希望下次打开浏览器还能找回这些标签页，此时也可以使用OneTab。 五彩 网页划线高亮批注工具，用来在网页上记笔记。对于个人博客网站，担心网页以后打不开，可使用剪藏功能爬取网页内容，永久保存下来。另外还支持备份笔记到其他软&hellip;		</div>
-	
-	</article><article class="post card bg-white shadow-sm border-0 post-preview post-preview-layout-3" id="post-2253" class="post-2253 post type-post status-publish format-standard hentry category-91">
-		<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='https://bed.yuyy.info:8088/i/202406301150009.gif' alt='thumbnail' style='opacity: 0;'></img></header>		<header class="post-header">
-			<a class="post-title" href="https://yuyy.info/?p=2253">Goland、Idea 插件推荐</a>
-			<div class="post-meta">
-				<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 781</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=91" target="_blank" class="post-meta-detail-catagory-link">我的好物推荐</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-6-30 15:32:11 | 编辑于 2024-6-30 15:58:39">2024-6-30 15:32
-					</time>
-				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-edittime">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-6-30 15:32:11 | 编辑于 2024-6-30 15:58:39">2024-6-30 15:58
-					</time>
-				</div>								</br><div class="post-meta-detail post-meta-detail-words">
-		<i class="fa fa-file-word-o" aria-hidden="true"></i><span> 562 字</span>
-		</div>
-		<div class="post-meta-devide">|</div>
-		<div class="post-meta-detail post-meta-detail-words">
-			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-			3 分钟
-		</div>
-				</div>
-		</header>
-
-				<div class="post-content">
-			Copilot Github 开发的智能代码编写工具，可以代码提示，直接提问。它写的代码基本能用，特别是结合本地代码生成的提示，极大的提高开发效率。另外可以看看我之前的文章：Github Copilot 是如何提升我的工作效率？ AceJump 使用快捷键快速移动鼠标到某个位置，这样减少手离开键盘去拿鼠标的次数，提高效率。 .ignore 快速创建&hellip;		</div>
-	
-	</article><article class="post card bg-white shadow-sm border-0 post-preview post-preview-layout-3" id="post-2251" class="post-2251 post type-post status-publish format-standard hentry category-91">
-		<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='https://bed.yuyy.info:8088/i/202407251956132.png' alt='thumbnail' style='opacity: 0;'></img></header>		<header class="post-header">
-			<a class="post-title" href="https://yuyy.info/?p=2251">Mac 软件推荐</a>
-			<div class="post-meta">
-				<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 608</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=91" target="_blank" class="post-meta-detail-catagory-link">我的好物推荐</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-6-30 15:12:02 | 编辑于 2024-7-25 19:59:15">2024-6-30 15:12
-					</time>
-				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-edittime">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-6-30 15:12:02 | 编辑于 2024-7-25 19:59:15">2024-7-25 19:59
-					</time>
-				</div>								</br><div class="post-meta-detail post-meta-detail-words">
-		<i class="fa fa-file-word-o" aria-hidden="true"></i><span> 1769 字</span>
-		</div>
-		<div class="post-meta-devide">|</div>
-		<div class="post-meta-detail post-meta-detail-words">
-			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-			7 分钟
-		</div>
-				</div>
-		</header>
-
-				<div class="post-content">
-			20240725更新 heynote 平时工作中，经常出现需要临时记录下，打个草稿之类的场景，我一般是用 sublime 临时记录下。还有需要对文本进行处理，例如查找、替换、调整格式、json格式化等场景，也是用 sublime 解决。在周五，或者平时关机的时候清理下这些内容。 最近同事推荐了一款专门做这个事情的软件“heynote”。slogan&hellip;		</div>
-	
-	</article><article class="post card bg-white shadow-sm border-0 post-preview post-preview-layout-3" id="post-2218" class="post-2218 post type-post status-publish format-standard hentry category-74">
-		<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='https://bed.yuyy.info:8088/i/202403061625072.png' alt='thumbnail' style='opacity: 0;'></img></header>		<header class="post-header">
-			<a class="post-title" href="https://yuyy.info/?p=2218">在 K8S 节点上使用非 Nodeport 默认端口范围暴漏服务</a>
-			<div class="post-meta">
-				<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 781</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=74" target="_blank" class="post-meta-detail-catagory-link">云原生</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-3-06 16:26:53 | 编辑于 2024-3-06 16:40:07">2024-3-06 16:26
-					</time>
-				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-edittime">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-3-06 16:26:53 | 编辑于 2024-3-06 16:40:07">2024-3-06 16:40
-					</time>
-				</div>								</br><div class="post-meta-detail post-meta-detail-words">
-		<i class="fa fa-file-word-o" aria-hidden="true"></i><span> 655 字</span>
-		</div>
-		<div class="post-meta-devide">|</div>
-		<div class="post-meta-detail post-meta-detail-words">
-			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-			3 分钟
-		</div>
-				</div>
-		</header>
-
-				<div class="post-content">
-			需求背景 服务 A 部署在 K8S 中，集群外的服务 B 需要调用服务 A，同时调用服务 A 的端口是指定了的，必须是 5000，无法修改。 K8S 集群是客户的，我们只能部署服务，不能修改集群。 服务 A 需要得到真实的客户端 IP。 解决方案一 通过 Nodeport 的方式暴漏服务 A。 5000 端口不在 Nodeport 默认端口范围内（&hellip;		</div>
-	
-	</article><article class="post card bg-white shadow-sm border-0 post-preview post-preview-layout-3" id="post-2216" class="post-2216 post type-post status-publish format-standard hentry category-74">
-		<header class='post-header post-header-with-thumbnail'><img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='https://bed.yuyy.info:8088/i/202403061112196.png' alt='thumbnail' style='opacity: 0;'></img></header>		<header class="post-header">
-			<a class="post-title" href="https://yuyy.info/?p=2216">在 K8S 中利用 sidecar 控制 Pod 重启</a>
-			<div class="post-meta">
-				<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 777</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=74" target="_blank" class="post-meta-detail-catagory-link">云原生</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-3-06 11:20:26 | 编辑于 2024-3-06 11:20:26">2024-3-06 11:20
-					</time>
-				</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-edittime">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					<time title="发布于 2024-3-06 11:20:26 | 编辑于 2024-3-06 11:20:26">2024-3-06 11:20
-					</time>
-				</div>								</br><div class="post-meta-detail post-meta-detail-words">
-		<i class="fa fa-file-word-o" aria-hidden="true"></i><span> 334 字</span>
-		</div>
-		<div class="post-meta-devide">|</div>
-		<div class="post-meta-detail post-meta-detail-words">
-			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-			2 分钟
-		</div>
-				</div>
-		</header>
-
-				<div class="post-content">
-			需求一 A 容器负责授权管理，当用户更改了授权时，需要重启 B 容器生效。 解决方案 通过 sidecar 启动一个 http server，并提供两个接口，接口一用于 K8S 的存活探针；接口二用于接收重启信号，供容器 A 调用。当收到重启信号时，修改接口一返回值，使其返回 500 http code，从而让 K8S 重启 Pod 内容器。 方案&hellip;		</div>
-	
-	</article>		<nav><ul class="pagination"><li class="page-item active"><span class="page-link" style="cursor: default;">1</span></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=2">2</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=3">3</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=4">4</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=5">5</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=6">6</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=7">7</a></li><li class="page-item"><a aria-label="Next Page" class="page-link" href="https://yuyy.info/?paged=2"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li><li class="page-item"><a aria-label="Last Page" class="page-link" href="https://yuyy.info/?paged=50"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li></ul></nav><nav><ul class="pagination pagination-mobile"><li class="page-item active"><span class="page-link" style="cursor: default;">1</span></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=2">2</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=3">3</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=4">4</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=5">5</a></li><li class="page-item"><a aria-label="Next Page" class="page-link" href="https://yuyy.info/?paged=2"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li><li class="page-item"><a aria-label="Last Page" class="page-link" href="https://yuyy.info/?paged=50"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li></ul></nav>		
+	</article>
+		{{ /articleList }}
+		<nav><ul class="pagination"><li class="page-item active"><span class="page-link" style="cursor: default;">1</span></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=2">2</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=3">3</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=4">4</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=5">5</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=6">6</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=7">7</a></li><li class="page-item"><a aria-label="Next Page" class="page-link" href="https://yuyy.info/?paged=2"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li><li class="page-item"><a aria-label="Last Page" class="page-link" href="https://yuyy.info/?paged=50"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li></ul></nav><nav><ul class="pagination pagination-mobile"><li class="page-item active"><span class="page-link" style="cursor: default;">1</span></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=2">2</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=3">3</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=4">4</a></li><li class="page-item"><a class="page-link" href="https://yuyy.info/?paged=5">5</a></li><li class="page-item"><a aria-label="Next Page" class="page-link" href="https://yuyy.info/?paged=2"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li><li class="page-item"><a aria-label="Last Page" class="page-link" href="https://yuyy.info/?paged=50"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li></ul></nav>		
 					<footer id="footer" class="site-footer card shadow-sm border-0">
 						<a href="http://www.beian.miit.gov.cn/">渝ICP备19004742</a>						<div>Theme <a href="https://github.com/solstice23/argon-theme" target="_blank"><strong>Argon</strong></a></div>
 					</footer>
@@ -963,6 +707,7 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 </div>
 <script type="text/javascript" src="https://yuyy.info/wp-content/plugins/page-links-to/dist/new-tab.js" id="page-links-to-js"></script>
  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8d2401da2e0c601d","version":"2024.10.1","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"00486dfe71e541049c08edeea10b2534","b":1}' crossorigin="anonymous"></script>
+	{{ &OPT.codeBeforBody }}
 </body>
 
 
