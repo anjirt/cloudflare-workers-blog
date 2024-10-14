@@ -599,28 +599,14 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 </div>
 <aside id="rightbar" class="rightbar widget-area" role="complementary">
 		<div id="recent-posts-5" class="widget widget_recent_entries card shadow-sm bg-white border-0">
-		<h6 class="font-weight-bold text-black">近期文章</h6>
+		<h6 class="font-weight-bold text-black">Recent Posts</h6>
 		<ul>
+			{{ #widgetRecentlyList }}
 											<li>
-					<a href="https://yuyy.info/?p=2283">如何debug minikube里的golang容器？</a>
-											<span class="post-date">2024年9月21日</span>
+					<a href="{{ &url }}">{{ &title }}</a>
+											<span class="post-date">{{ &createDate10 }}</span>
 									</li>
-											<li>
-					<a href="https://yuyy.info/?p=2276">重复创建软链接产生的奇怪现象</a>
-											<span class="post-date">2024年8月17日</span>
-									</li>
-											<li>
-					<a href="https://yuyy.info/?p=2264">Golang面试题</a>
-											<span class="post-date">2024年7月13日</span>
-									</li>
-											<li>
-					<a href="https://yuyy.info/?p=2262">K8s面试题</a>
-											<span class="post-date">2024年7月13日</span>
-									</li>
-											<li>
-					<a href="https://yuyy.info/?p=2258">程序员办公用品推荐</a>
-											<span class="post-date">2024年6月30日</span>
-									</li>
+			{{ /widgetRecentlyList }}
 					</ul>
 
 		</div><div id="post_views_counter_list_widget-4" class="widget widget_post_views_counter_list_widget card shadow-sm bg-white border-0"><h6 class="font-weight-bold text-black">浏览最多的文章</h6><ol>
