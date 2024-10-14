@@ -503,14 +503,11 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 
 			<ul id='leftbar_part1_menu' class='leftbar-menu'>
 
-						<li class='leftbar-menu-item'>
-							<a href='/' target=''><i class="fa fa-home"></i> Home</a></li>
 				{{ #widgetMenuList }}
 						<li class='leftbar-menu-item'>
 							<a href='{{ &url }}' target=''>{{ &title }}</a></li>
 				{{ /widgetMenuList }}
-						<li class='leftbar-menu-item'>
-							<a href='/admin' target=''><i class="fa fa-cog"></i> Manage</a></li></ul>			<div class="card-body text-center leftbar-search-button">
+						</ul>			<div class="card-body text-center leftbar-search-button">
 				<button id="leftbar_search_container" class="btn btn-secondary btn-lg active btn-sm btn-block border-0" role="button">
 					<i class="menu-item-icon fa fa-search mr-0"></i> Search					<input id="leftbar_search_input" type="text" placeholder="What to search for..." class="form-control form-control-alternative" autocomplete="off">
 				</button>
