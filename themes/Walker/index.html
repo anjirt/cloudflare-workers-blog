@@ -695,6 +695,7 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 	</div>
 </div>
 	<script>
+function updateCounts() {
     const postscountsdata = [{{ #widgetRecentlyList }}"{{ &id }}",{{ /widgetRecentlyList }}"hi"];
     let postscounts = postscountsdata[0] - 1 + 1;
     document.getElementById("postscounts").innerHTML = postscounts;
@@ -706,6 +707,17 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
     const tagscountsdata = [{{ #widgetTagsList }}"{{&.}}",{{ /widgetTagsList }}"hi"];
     let tagscounts = tagscountsdata.length - 2;
     document.getElementById("tagscounts").innerHTML = tagscounts;
+}
+
+// Panggil fungsi saat DOM pertama kali dimuat
+$(document).ready(function() {
+    updateCounts();
+});
+
+// Panggil fungsi setiap kali AJAX selesai
+$(document).ajaxComplete(function() {
+    updateCounts();
+});
 </script>
 <script type="text/javascript" src="https://yuyy.info/wp-content/plugins/page-links-to/dist/new-tab.js" id="page-links-to-js"></script>
   {{ &OPT.codeBeforBody }}
