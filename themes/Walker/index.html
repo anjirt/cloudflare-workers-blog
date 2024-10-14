@@ -539,20 +539,20 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 														<nav class="site-state">
 								<div class="site-state-item site-state-posts">
 									<a href="https://yuyy.info/?page_id=1794">
-										<span class="site-state-item-count">493</span>
-										<span class="site-state-item-name">文章</span>
+										<span class="site-state-item-count" id="postscounts">0</span>
+										<span class="site-state-item-name">Article</span>
 									</a>
 								</div>
 								<div class="site-state-item site-state-categories">
 									<a data-toggle="modal" data-target="#blog_categories">
-										<span class="site-state-item-count">46</span>
-										<span class="site-state-item-name">分类</span>
+										<span class="site-state-item-count" id="catcounts">0</span>
+										<span class="site-state-item-name">Categories</span>
 									</a>
 								</div>      
 								<div class="site-state-item site-state-tags">
 									<a data-toggle="modal" data-target="#blog_tags">
-										<span class="site-state-item-count">28</span>
-										<span class="site-state-item-name">标签</span>
+										<span class="site-state-item-count" id="tagscounts">0</span>
+										<span class="site-state-item-name">Tags</span>
 									</a>
 								</div>
 							</nav>
@@ -705,6 +705,14 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 		
 	</div>
 </div>
+	<script type="text/javacript">
+		var catcountsdata=new Array({{ #widgetCategoryList }}'{{&.}}',{{ /widgetCategoryList }});
+		var catcounts=catscountsdata.length;
+		document.getElementById("catcounts").innerHTML = catcounts;
+		var tagscountsdata=new Array({{ #widgetTagsList }}'{{&.}}',{{ /widgetTagsList }});
+		var tagscounts=catscountsdata.length;
+		document.getElementById("tagscounts").innerHTML = tagscounts;
+	</script>
 <script type="text/javascript" src="https://yuyy.info/wp-content/plugins/page-links-to/dist/new-tab.js" id="page-links-to-js"></script>
   {{ &OPT.codeBeforBody }}
  </body>
