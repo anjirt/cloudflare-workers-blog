@@ -505,10 +505,10 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 
 						<li class='leftbar-menu-item'>
 							<a href='/' target=''><i class="fa fa-home"></i> Home</a></li>
-				
+				{{ #widgetMenuList }}
 						<li class='leftbar-menu-item'>
-							<a href='/sitemap.xml' target=''><i class="fa fa-sitemap"></i> Sitemap</a></li>
-
+							<a href='{{ &url }}' target=''>{{ &title }}</a></li>
+				{{ /widgetMenuList }}
 						<li class='leftbar-menu-item'>
 							<a href='/admin' target=''><i class="fa fa-cog"></i> Manage</a></li></ul>			<div class="card-body text-center leftbar-search-button">
 				<button id="leftbar_search_container" class="btn btn-secondary btn-lg active btn-sm btn-block border-0" role="button">
