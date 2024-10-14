@@ -707,10 +707,10 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 </div>
 	<script type="text/javacript">
 		const catcountsdata=[{{ #widgetCategoryList }}"{{&.}}",{{ /widgetCategoryList }}"hi"];
-		var catcounts=catscountsdata.length-1;
+		let length=catscountsdata.length;
 		document.getElementById("catcounts").innerHTML = catcounts;
 		const tagscountsdata=[{{ #widgetTagsList }}"{{&.}}",{{ /widgetTagsList }}"hi"];
-		var tagscounts=catscountsdata.length-1;
+		var tagscounts=catscountsdata.length;
 		document.getElementById("tagscounts").innerHTML = tagscounts;
 	</script>
 <script type="text/javascript" src="https://yuyy.info/wp-content/plugins/page-links-to/dist/new-tab.js" id="page-links-to-js"></script>
