@@ -706,6 +706,10 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 	</div>
 </div>
 	<script>
+    const postscountsdata = [{{ #widgetRecentlyList }}"{{ &id }}",{{ /widgetRecentlyList }}"hi"];
+    let postscounts = postscountsdata[0] - 1 + 1; // Menghitung panjang array dan menguranginya 1
+    document.getElementById("postscounts").innerHTML = postscounts; // Menampilkan jumlah
+
     const catcountsdata = [{{ #widgetCategoryList }}"{{&.}}",{{ /widgetCategoryList }}"hi"];
     let catcounts = catcountsdata.length - 1; // Menghitung panjang array dan menguranginya 1
     document.getElementById("catcounts").innerHTML = catcounts; // Menampilkan jumlah
