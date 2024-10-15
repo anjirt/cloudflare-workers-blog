@@ -603,63 +603,63 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 	</article>
 <div id="share_container">
 	<div id="share" data-initialized="true">
-						<a class="no-pjax icon-wechat" tooltip="Share to WeChat">
+						<a class="no-pjax icon-wechat" tooltip="分享到微信">
 				<button class="btn btn-icon btn-success">
 					<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
 				</button>
 			</a>
-			<a target="_blank" class="no-pjax icon-douban" tooltip="Share on Douban">
+			<a target="_blank" class="no-pjax icon-douban" tooltip="分享到豆瓣">
 				<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
-					<span aria-hidden="true">Beans</span>
+					<span aria-hidden="true">豆</span>
 				</button>
 			</a>
-			<a target="_blank" class="no-pjax icon-qq" tooltip="Share to QQ">
+			<a target="_blank" class="no-pjax icon-qq" tooltip="分享到 QQ">
 				<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
 					<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
 				</button>
 			</a>
-			<a target="_blank" class="no-pjax icon-qzone" tooltip="Share to QQ space">
+			<a target="_blank" class="no-pjax icon-qzone" tooltip="分享到 QQ 空间">
 				<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
 					<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
 				</button>
 			</a>
-			<a target="_blank" class="no-pjax icon-weibo" tooltip="Share to Weibo">
+			<a target="_blank" class="no-pjax icon-weibo" tooltip="分享到微博">
 				<button class="btn btn-icon btn-warning">
 					<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
 				</button>
 			</a>
-				<a target="_blank" class="no-pjax icon-facebook" tooltip="Share to Facebook">
+				<a target="_blank" class="no-pjax icon-facebook" tooltip="分享到 Facebook">
 			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
 			</button>
 		</a>
-		<a target="_blank" class="no-pjax icon-twitter" tooltip="Share to Twitter">
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="分享到 Twitter">
 			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
 			</button>
 		</a>
-		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=https://{{ &OPT.siteDomain }}/article/{{ &articleSingle.id }}/{{ &articleSingle.link }}.html&text={{ &articleSingle.title }}" tooltip="Share to Telegram">
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=yuyy.info&text=%E5%A6%82%E4%BD%95debug+minikube%E9%87%8C%E7%9A%84golang%E5%AE%B9%E5%99%A8%EF%BC%9F" tooltip="分享到 Telegram">
 			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
 			</button>
 		</a>
-				<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="Copy link">
+				<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="复制链接">
 			<button class="btn btn-icon btn-default">
 				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
 			</button>
 		</a>
 	</div>
-	<button id="share_show" class="btn btn-icon btn-primary" tooltip="Share">
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="分享">
 		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
 	</button>
 </div>
 <script type="text/javascript">
 	socialShare("#share", {
-	    title : '{{ &articleSingle.title }}',
-	    description : '{{ &articleSingle.contentText }}',
-	    wechatQrcodeTitle : "Share to WeChat",
-	    wechatQrcodeHelper : 'Scan the QR code on WeChat',
-	    source : 'https://{{ &OPT.siteDomain }}/article/{{ &articleSingle.id }}/{{ &articleSingle.link }}.html'
+	    title : '如何debug minikube里的golang容器？',
+	    description : '问题背景 在学习开源项目时，很多时候光看代码是搞不清楚实际运行时会走哪个逻辑分支，或者无法推测方法参…',
+	    wechatQrcodeTitle : "分享到微信",
+	    wechatQrcodeHelper : '微信扫描二维码',
+	    source : 'https://yuyy.info/?p=2283'
 	});
 	$("#share_show")[0].onclick = function(){
 		$("#share_container").addClass("opened");
@@ -673,8 +673,8 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 		input.select();
 		if (document.execCommand('copy')){
 			iziToast.show({
-				title: 'Link copied',
-				message: "Link copied to clipboard",
+				title: '链接已复制',
+				message: "链接已复制到剪贴板",
 				class: 'shadow',
 				position: 'topRight',
 				backgroundColor: '#2dce89',
@@ -687,8 +687,8 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 			});
 		}else{
 			iziToast.show({
-				title: 'Copy failed',
-				message: "Please copy the link manually",
+				title: '复制失败',
+				message: "请手动复制链接",
 				class: 'shadow',
 				position: 'topRight',
 				backgroundColor: '#f5365c',
