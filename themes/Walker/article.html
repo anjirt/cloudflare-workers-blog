@@ -1005,6 +1005,29 @@ COPY bin/manager .</code></pre>
 		
 	</div>
 </div>
+	<script>
+function updateCounts() {
+    const postscountsdata = [{{ #widgetRecentlyList }}"{{ &id }}",{{ /widgetRecentlyList }}"hi"];
+    let postscounts = postscountsdata[0] - 1 + 1;
+    document.getElementById("postscounts").innerHTML = postscounts;
+
+    const catcountsdata = [{{ #widgetCategoryList }}"{{&.}}",{{ /widgetCategoryList }}"hi"];
+    let catcounts = catcountsdata.length - 1;
+    document.getElementById("catcounts").innerHTML = catcounts;
+
+    const tagscountsdata = [{{ #widgetTagsList }}"{{&.}}",{{ /widgetTagsList }}"hi"];
+    let tagscounts = tagscountsdata.length - 1;
+    document.getElementById("tagscounts").innerHTML = tagscounts;
+}
+
+$(document).ready(function() {
+    updateCounts();
+});
+
+$(document).ajaxComplete(function() {
+    updateCounts();
+});
+</script>
 <script type="text/javascript"><!--//--><![CDATA[//><!--
 var cf = document.getElementById("commentform");
 if(cf){
