@@ -610,7 +610,7 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 			</a>
 			<a target="_blank" class="no-pjax icon-douban" tooltip="Share on Douban">
 				<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
-					<span aria-hidden="true">Beans</span>
+					<span aria-hidden="true">豆</span>
 				</button>
 			</a>
 			<a target="_blank" class="no-pjax icon-qq" tooltip="Share to QQ">
@@ -641,6 +641,11 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=https://{{ &OPT.siteDomain }}/article/{{ &articleSingle.id }}/{{ &articleSingle.link }}.html&text={{ &articleSingle.title }}" tooltip="Share to Telegram">
 			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-whatsapp" href="https://wa.me/?text={{ &articleSingle.title }} - https://{{ &OPT.siteDomain }}/article/{{ &articleSingle.id }}/{{ &articleSingle.link }}.html" tooltip="Share to Whatsapp">
+			<button class="btn btn-icon btn-primary" style="background: #25D366;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-whatsapp"></i></span>
 			</button>
 		</a>
 				<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="Copy link">
