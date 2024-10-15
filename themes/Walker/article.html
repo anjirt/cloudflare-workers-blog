@@ -569,37 +569,10 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 			{{ /widgetRecentlyList }}
 					</ul>
 
-		</div><div id="post_views_counter_list_widget-4" class="widget widget_post_views_counter_list_widget card shadow-sm bg-white border-0"><h6 class="font-weight-bold text-black">浏览最多的文章</h6><ol>
-			<li>
-					<a class="post-title" href="https://yuyy.info/?p=1925">Gitlab CI/CD 实践三：Docker 安装 Gitlab Runner</a> <span class="count">(3,304)</span>
-			</li>
-			<li>
-					<a class="post-title" href="https://yuyy.info/?p=1946">Gitlab CI/CD 实践四：Golang 项目 CI/CD 流水线配置</a> <span class="count">(3,160)</span>
-			</li>
-			<li>
-					<a class="post-title" href="https://yuyy.info/?p=1921">Gitlab CI/CD 实践一：Gitlab Runner 安装到 K8S 集群</a> <span class="count">(2,944)</span>
-			</li>
-			<li>
-					<a class="post-title" href="https://yuyy.info/?p=2097">玩玩NAS、软路由，搭建家庭影音系统</a> <span class="count">(2,903)</span>
-			</li>
-			<li>
-					<a class="post-title" href="https://yuyy.info/?p=1980">Gitlab CI/CD 实践六：统一管理 protocol buffer，API 大仓设计与实现</a> <span class="count">(2,817)</span>
-			</li>
-			<li>
-					<a class="post-title" href="https://yuyy.info/?p=1896">Deepin使用Wallpaper Engine的壁纸</a> <span class="count">(2,696)</span>
-			</li>
-			<li>
-					<a class="post-title" href="https://yuyy.info/?p=1877">Protocol Buffers的扩展工具：Buf</a> <span class="count">(2,621)</span>
-			</li>
-			<li>
-					<a class="post-title" href="https://yuyy.info/?p=1">Hello Word</a> <span class="count">(2,237)</span>
-			</li>
-			<li>
-					<a class="post-title" href="https://yuyy.info/?p=1956">Gitlab CI/CD 实践五：基础镜像 Dockerfile 仓库 CI 流水线配置</a> <span class="count">(2,220)</span>
-			</li>
-			<li>
-					<a class="post-title" href="https://yuyy.info/?p=1884">《Go语言精进之路》1-3章笔记</a> <span class="count">(2,197)</span>
-			</li></ol></div></aside>
+		</div><div id="post_views_counter_list_widget-4" class="widget widget_post_views_counter_list_widget card shadow-sm bg-white border-0"><h6 class="font-weight-bold text-black">Others</h6><ol>
+			{{ #widgetLinkList }}
+									<li><a class="post-title" href="{{ &url }}">{{ &title }}</a></li>
+							{{ /widgetLinkList }}</ol></div></aside>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 		<article class="post post-full card bg-white shadow-sm border-0" id="post-2283" class="post-2283 post type-post status-publish format-standard hentry category-74">
