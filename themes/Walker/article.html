@@ -582,12 +582,10 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 					body section.banner {
 						background-image: url(https://bed.yuyy.info:8088/i/202409211616050.jpg) !important;
 					}
-				</style>		<a class="post-title" href="https://yuyy.info/?p=2283">如何debug minikube里的golang容器？</a>
+				</style>		<a class="post-title" href="/article/{{ &articleSingle.id }}/{{ &articleSingle.link }}.html">{{ &articleSingle.title }}</a>
 		<div class="post-meta">
-			<div class="post-meta-detail post-meta-detail-views">
-					<i class="fa fa-eye" aria-hidden="true"></i> 160</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-comments">
-					<i class="fa fa-comments-o" aria-hidden="true"></i> 0</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-categories">
-				<i class="fa fa-bookmark-o" aria-hidden="true"></i> <a href="https://yuyy.info/?cat=74" target="_blank" class="post-meta-detail-catagory-link">云原生</a></div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
+			<div class="post-meta-detail post-meta-detail-categories">
+				<i class="fa fa-bookmark-o" aria-hidden="true"></i> {{ #articleSingle.category }}<a href="/category/{{&.}}" target="_blank" class="post-meta-detail-catagory-link">{{&.}}</a>{{ /articleSingle.category }}</div> <div class="post-meta-devide">|</div> <div class="post-meta-detail post-meta-detail-time">
 					<i class="fa fa-clock-o" aria-hidden="true"></i>
 					<time title="Posted at {{ &articleSingle.createDate }}">{{ &articleSingle.createDate10 }}
 					</time>
