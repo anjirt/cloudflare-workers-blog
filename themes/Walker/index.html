@@ -599,7 +599,7 @@ function updateCounts() {
     document.getElementById("catcounts").innerHTML = catcounts;
 
     const tagscountsdata = [{{ #widgetTagsList }}"{{&.}}",{{ /widgetTagsList }}"hi"];
-    let tagscounts = tagscountsdata.length - 2;
+    let tagscounts = tagscountsdata.length - 1;
     document.getElementById("tagscounts").innerHTML = tagscounts;
 }
 
