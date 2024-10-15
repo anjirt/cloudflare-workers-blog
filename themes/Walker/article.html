@@ -915,6 +915,13 @@ $(document).ready(function() {
 $(document).ajaxComplete(function() {
     updateCounts();
 });
+		$(document).ready(function () {
+    var hasContents = $('#leftbar_catalog').children().length > 0; // Cek apakah ada isi
+    if (!hasContents) {
+        $('#leftbar_tab_overview_btn').tab('show'); // Tampilkan tab overview jika tidak ada daftar isi
+    }
+});
+
 </script>
 <script type="text/javascript"><!--//--><![CDATA[//><!--
 var cf = document.getElementById("commentform");
