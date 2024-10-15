@@ -586,29 +586,7 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 	</div>
 </div>
 	<script>
-function updateCounts() {
-    const postscountsdata = [{{ #widgetRecentlyList }}"{{ &id }}",{{ /widgetRecentlyList }}"hi"];
-    let postscounts = postscountsdata[0] - 1 + 1;
-    document.getElementById("postscounts").innerHTML = postscounts;
-
-    const catcountsdata = [{{ #widgetCategoryList }}"{{&.}}",{{ /widgetCategoryList }}"hi"];
-    let catcounts = catcountsdata.length - 1;
-    document.getElementById("catcounts").innerHTML = catcounts;
-
-    const tagscountsdata = [{{ #widgetTagsList }}"{{&.}}",{{ /widgetTagsList }}"hi"];
-    let tagscounts = tagscountsdata.length - 1;
-    document.getElementById("tagscounts").innerHTML = tagscounts;
-}
-
-$(document).ready(function() {
-    updateCounts();
-});
-
-$(document).ajaxComplete(function() {
-    updateCounts();
-});
-
-		function checkContents() {
+function checkContents() {
     var hasContents = $('#leftbar_catalog').children().length > 0;
     if (!hasContents) {
         $('.nav-wrapper').hide();
@@ -625,6 +603,31 @@ $(document).ready(function () {
     $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
         checkContents();
     });
+});
+
+		
+function updateCounts() {
+    const postscountsdata = [{{ #widgetRecentlyList }}"{{ &id }}",{{ /widgetRecentlyList }}"hi"];
+    let postscounts = postscountsdata[0] - 1 + 1;
+    document.getElementById("postscounts").innerHTML = postscounts;
+
+    const catcountsdata = [{{ #widgetCategoryList }}"{{&.}}",{{ /widgetCategoryList }}"hi"];
+    let catcounts = catcountsdata.length - 1;
+    document.getElementById("catcounts").innerHTML = catcounts;
+
+    const tagscountsdata = [{{ #widgetTagsList }}"{{&.}}",{{ /widgetTagsList }}"hi"];
+    let tagscounts = tagscountsdata.length - 1;
+    document.getElementById("tagscounts").innerHTML = tagscounts;
+}
+
+$(document).ready(function() {
+    updateCounts();
+	checkContents();
+});
+
+$(document).ajaxComplete(function() {
+    updateCounts();
+	checkContents();
 });
 
 </script>
