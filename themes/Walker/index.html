@@ -607,12 +607,24 @@ $(document).ready(function() {
 $(document).ajaxComplete(function() {
     updateCounts();
 });
-		$(document).ready(function () {
-    var hasContents = $('#leftbar_catalog').children().length > 0;
+
+		function checkContents() {
+    var hasContents = $('#leftbar_catalog').children().length > 0; // Cek apakah ada isi
     if (!hasContents) {
-	$('.nav-wrapper').hide();
-        $('#leftbar_tab_overview_btn').tab('show');
+        $('.nav-wrapper').hide(); // Menyembunyikan elemen tab jika tidak ada daftar isi
+        $('#leftbar_tab_overview_btn').tab('show'); // Tampilkan tab overview jika tidak ada daftar isi
+    } else {
+        $('.nav-wrapper').show(); // Tampilkan tab jika ada daftar isi
     }
+}
+
+$(document).ready(function () {
+    checkContents(); // Cek saat halaman dimuat
+
+    // Jika menggunakan Bootstrap tab, Anda bisa menambahkan listener
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
+        checkContents(); // Panggil fungsi saat tab ditampilkan
+    });
 });
 
 </script>
