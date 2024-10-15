@@ -600,12 +600,10 @@ function updateCounts() {
     document.getElementById("tagscounts").innerHTML = tagscounts;
 }
 
-// Panggil fungsi saat DOM pertama kali dimuat
 $(document).ready(function() {
     updateCounts();
 });
 
-// Panggil fungsi setiap kali AJAX selesai
 $(document).ajaxComplete(function() {
     updateCounts();
 });
