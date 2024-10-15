@@ -602,106 +602,106 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 			
 	</article>
 <div id="share_container">
-    <div id="share" data-initialized="true">
-        <a class="no-pjax icon-wechat" tooltip="Share on WeChat">
-            <button class="btn btn-icon btn-success">
-                <span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
-            </button>
-        </a>
-        <a target="_blank" class="no-pjax icon-douban" tooltip="Share on Douban">
-            <button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
-                <span aria-hidden="true">豆</span>
-            </button>
-        </a>
-        <a target="_blank" class="no-pjax icon-qq" tooltip="Share on QQ">
-            <button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
-                <span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
-            </button>
-        </a>
-        <a target="_blank" class="no-pjax icon-qzone" tooltip="Share on Qzone">
-            <button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
-                <span class="btn-inner--icon"><i class="fa fa-star"></i></span>
-            </button>
-        </a>
-        <a target="_blank" class="no-pjax icon-weibo" tooltip="Share on Weibo">
-            <button class="btn btn-icon btn-warning">
-                <span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
-            </button>
-        </a>
-        <a target="_blank" class="no-pjax icon-facebook" tooltip="Share on Facebook">
-            <button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
-                <span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
-            </button>
-        </a>
-        <a target="_blank" class="no-pjax icon-twitter" tooltip="Share on Twitter">
-            <button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
-                <span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
-            </button>
-        </a>
-        <a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=yuyy.info&text=%E5%A6%82%E4%BD%95debug+minikube%E9%87%8C%E7%9A%84golang%E5%AE%B9%E5%99%A8%EF%BC%9F" tooltip="Share on Telegram">
-            <button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
-                <span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
-            </button>
-        </a>
-        <a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="Copy Link">
-            <button class="btn btn-icon btn-default">
-                <span class="btn-inner--icon"><i class="fa fa-link"></i></span>
-            </button>
-        </a>
-    </div>
-    <button id="share_show" class="btn btn-icon btn-primary" tooltip="Share">
-        <span class="btn-inner--icon"><i class="fa fa-share"></i></span>
-    </button>
+	<div id="share" data-initialized="true">
+						<a class="no-pjax icon-wechat" tooltip="Share to WeChat">
+				<button class="btn btn-icon btn-success">
+					<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
+				</button>
+			</a>
+			<a target="_blank" class="no-pjax icon-douban" tooltip="Share on Douban">
+				<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
+					<span aria-hidden="true">Beans</span>
+				</button>
+			</a>
+			<a target="_blank" class="no-pjax icon-qq" tooltip="Share to QQ">
+				<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
+					<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
+				</button>
+			</a>
+			<a target="_blank" class="no-pjax icon-qzone" tooltip="Share to QQ space">
+				<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
+					<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
+				</button>
+			</a>
+			<a target="_blank" class="no-pjax icon-weibo" tooltip="Share to Weibo">
+				<button class="btn btn-icon btn-warning">
+					<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
+				</button>
+			</a>
+				<a target="_blank" class="no-pjax icon-facebook" tooltip="Share to Facebook">
+			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="Share to Twitter">
+			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=https://{{ &OPT.siteDomain }}/article/{{ &articleSingle.id }}/{{ &articleSingle.link }}.html&text={{ &articleSingle.title }}" tooltip="Share to Telegram">
+			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
+			</button>
+		</a>
+				<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="Copy link">
+			<button class="btn btn-icon btn-default">
+				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
+			</button>
+		</a>
+	</div>
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="Share">
+		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
+	</button>
 </div>
 <script type="text/javascript">
-    socialShare("#share", {
-        title: 'How to debug the golang container inside minikube?',
-        description: 'Background: When studying open source projects, often just looking at the code is not enough to understand which logical branch will be taken at runtime, or unable to infer method parameters...',
-        wechatQrcodeTitle: "Share on WeChat",
-        wechatQrcodeHelper: 'Scan the QR code with WeChat',
-        source: 'https://yuyy.info/?p=2283'
-    });
-    $("#share_show")[0].onclick = function () {
-        $("#share_container").addClass("opened");
-    };
-    $("#share_copy_link")[0].onclick = function () {
-        let input = document.createElement('input');
-        document.body.appendChild(input);
-        input.setAttribute("value", window.location.href);
-        input.setAttribute("readonly", "readonly");
-        input.setAttribute("style", "opacity: 0;mouse-events:none;");
-        input.select();
-        if (document.execCommand('copy')) {
-            iziToast.show({
-                title: 'Link Copied',
-                message: "Link copied to clipboard",
-                class: 'shadow',
-                position: 'topRight',
-                backgroundColor: '#2dce89',
-                titleColor: '#ffffff',
-                messageColor: '#ffffff',
-                iconColor: '#ffffff',
-                progressBarColor: '#ffffff',
-                icon: 'fa fa-check',
-                timeout: 5000
-            });
-        } else {
-            iziToast.show({
-                title: 'Copy Failed',
-                message: "Please copy the link manually",
-                class: 'shadow',
-                position: 'topRight',
-                backgroundColor: '#f5365c',
-                titleColor: '#ffffff',
-                messageColor: '#ffffff',
-                iconColor: '#ffffff',
-                progressBarColor: '#ffffff',
-                icon: 'fa fa-close',
-                timeout: 5000
-            });
-        }
-        document.body.removeChild(input);
-    };
+	socialShare("#share", {
+	    title : '{{ &articleSingle.title }}',
+	    description : '',
+	    wechatQrcodeTitle : "Share to WeChat",
+	    wechatQrcodeHelper : 'Scan the QR code on WeChat',
+	    source : 'https://{{ &OPT.siteDomain }}/article/{{ &articleSingle.id }}/{{ &articleSingle.link }}.html'
+	});
+	$("#share_show")[0].onclick = function(){
+		$("#share_container").addClass("opened");
+	};
+	$("#share_copy_link")[0].onclick = function(){
+		let input = document.createElement('input');
+		document.body.appendChild(input);
+		input.setAttribute("value", window.location.href);
+		input.setAttribute("readonly", "readonly");
+		input.setAttribute("style", "opacity: 0;mouse-events:none;");
+		input.select();
+		if (document.execCommand('copy')){
+			iziToast.show({
+				title: 'Link copied',
+				message: "Link copied to clipboard",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#2dce89',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-check',
+				timeout: 5000
+			});
+		}else{
+			iziToast.show({
+				title: 'Copy failed',
+				message: "Please copy the link manually",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#f5365c',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-close',
+				timeout: 5000
+			});
+		}
+		document.body.removeChild(input);
+	};
 </script>
 <div id="comments" class="comments-area card shadow-sm comment-avatar-vertical-center">
 	<div class="card-body">
