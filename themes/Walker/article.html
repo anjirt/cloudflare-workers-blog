@@ -589,14 +589,7 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 					<i class="fa fa-clock-o" aria-hidden="true"></i>
 					<time title="Posted at {{ &articleSingle.createDate }}">{{ &articleSingle.createDate10 }}
 					</time>
-				</div>			</br><div class="post-meta-detail post-meta-detail-words">
-		<i class="fa fa-file-word-o" aria-hidden="true"></i><span title="包含 5 行代码"> 1017 字</span>
-		</div>
-		<div class="post-meta-devide">|</div>
-		<div class="post-meta-detail post-meta-detail-words">
-			<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-			5 分钟
-		</div>
+				</div>			
 			</div>
 			</header>
 
@@ -610,63 +603,63 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 	</article>
 <div id="share_container">
 	<div id="share" data-initialized="true">
-						<a class="no-pjax icon-wechat" tooltip="分享到微信">
+						<a class="no-pjax icon-wechat" tooltip="Share to WeChat">
 				<button class="btn btn-icon btn-success">
 					<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
 				</button>
 			</a>
-			<a target="_blank" class="no-pjax icon-douban" tooltip="分享到豆瓣">
+			<a target="_blank" class="no-pjax icon-douban" tooltip="Share on Douban">
 				<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
-					<span aria-hidden="true">豆</span>
+					<span aria-hidden="true">Beans</span>
 				</button>
 			</a>
-			<a target="_blank" class="no-pjax icon-qq" tooltip="分享到 QQ">
+			<a target="_blank" class="no-pjax icon-qq" tooltip="Share to QQ">
 				<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
 					<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
 				</button>
 			</a>
-			<a target="_blank" class="no-pjax icon-qzone" tooltip="分享到 QQ 空间">
+			<a target="_blank" class="no-pjax icon-qzone" tooltip="Share to QQ space">
 				<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
 					<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
 				</button>
 			</a>
-			<a target="_blank" class="no-pjax icon-weibo" tooltip="分享到微博">
+			<a target="_blank" class="no-pjax icon-weibo" tooltip="Share to Weibo">
 				<button class="btn btn-icon btn-warning">
 					<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
 				</button>
 			</a>
-				<a target="_blank" class="no-pjax icon-facebook" tooltip="分享到 Facebook">
+				<a target="_blank" class="no-pjax icon-facebook" tooltip="Share to Facebook">
 			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
 			</button>
 		</a>
-		<a target="_blank" class="no-pjax icon-twitter" tooltip="分享到 Twitter">
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="Share to Twitter">
 			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
 			</button>
 		</a>
-		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=yuyy.info&text=%E5%A6%82%E4%BD%95debug+minikube%E9%87%8C%E7%9A%84golang%E5%AE%B9%E5%99%A8%EF%BC%9F" tooltip="分享到 Telegram">
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=https://{{ &OPT.siteDomain }}/article/{{ &articleSingle.id }}/{{ &articleSingle.link }}.html&text={{ &articleSingle.title }}" tooltip="Share to Telegram">
 			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
 			</button>
 		</a>
-				<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="复制链接">
+				<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="Copy link">
 			<button class="btn btn-icon btn-default">
 				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
 			</button>
 		</a>
 	</div>
-	<button id="share_show" class="btn btn-icon btn-primary" tooltip="分享">
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="Share">
 		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
 	</button>
 </div>
 <script type="text/javascript">
 	socialShare("#share", {
-	    title : '如何debug minikube里的golang容器？',
-	    description : '问题背景 在学习开源项目时，很多时候光看代码是搞不清楚实际运行时会走哪个逻辑分支，或者无法推测方法参…',
-	    wechatQrcodeTitle : "分享到微信",
-	    wechatQrcodeHelper : '微信扫描二维码',
-	    source : 'https://yuyy.info/?p=2283'
+	    title : '{{ &articleSingle.title }}',
+	    description : '{{ &articleSingle.contentText }}',
+	    wechatQrcodeTitle : "Share to WeChat",
+	    wechatQrcodeHelper : 'Scan the QR code on WeChat',
+	    source : 'https://{{ &OPT.siteDomain }}/article/{{ &articleSingle.id }}/{{ &articleSingle.link }}.html'
 	});
 	$("#share_show")[0].onclick = function(){
 		$("#share_container").addClass("opened");
@@ -680,8 +673,8 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 		input.select();
 		if (document.execCommand('copy')){
 			iziToast.show({
-				title: '链接已复制',
-				message: "链接已复制到剪贴板",
+				title: 'Link copied',
+				message: "Link copied to clipboard",
 				class: 'shadow',
 				position: 'topRight',
 				backgroundColor: '#2dce89',
@@ -694,8 +687,8 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 			});
 		}else{
 			iziToast.show({
-				title: '复制失败',
-				message: "请手动复制链接",
+				title: 'Copy failed',
+				message: "Please copy the link manually",
 				class: 'shadow',
 				position: 'topRight',
 				backgroundColor: '#f5365c',
