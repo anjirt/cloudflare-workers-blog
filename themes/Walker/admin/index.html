@@ -167,7 +167,8 @@ For the front end to take effect, ctrl+F5 is required to force a refresh.
 
 <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/editormd.js"></script>   
 <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/languages/en.js"></script>
-<script src="https://cdn.tiny.cloud/1/8lt254h5yxyr7al4bcjyq9v8yfvsenxwqbz2fppu2e1m7hpz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
 <script type="text/javascript">
 	$(function() {
@@ -177,14 +178,10 @@ For the front end to take effect, ctrl+F5 is required to force a refresh.
 		//获取菜单
 		var menuJson = <!--{menuJson}-->;
 		var linkJson = <!--{linkJson}-->;
-		tinymce.init({
-    selector: '#content textarea',  // Menghubungkan dengan textarea dalam div #content
-    height: 640,  // Tinggi editor
-    plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',  // Plugin WYSIWYG untuk fitur tambahan
-    toolbar_mode: 'floating',  // Posisi toolbar
-    menubar: false,  // Sembunyikan menubar jika tidak dibutuhkan
-    branding: false  // Hilangkan branding "Powered by Tiny"
+		var quill = new Quill('#content', {
+  theme: 'snow'
 });
+
 
 		//表单赋值
 		$('#createDate').val(new Date());
