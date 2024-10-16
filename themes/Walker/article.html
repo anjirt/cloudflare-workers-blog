@@ -770,43 +770,13 @@ $(document).ready(function() {
 $(document).ajaxComplete(function() {
     updateCounts();
 });
-	$(document).ready(function () {
-    checkContents();
-
-    // Ketika tab ditampilkan
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
-        checkContents();
-    });
-
-    // Tambahkan observer untuk memeriksa ketika konten dimuat
-    const targetNode = document.getElementById('leftbar_catalog');
-    const config = { childList: true, subtree: true };
-
-    const callback = function(mutationsList) {
-        for(let mutation of mutationsList) {
-            if (mutation.type === 'childList') {
-                checkContents();
-                break; // Hentikan jika sudah menemukan perubahan
-            }
-        }
-    };
-
-    const observer = new MutationObserver(callback);
-    observer.observe(targetNode, config);
-
-    function checkContents() {
-        setTimeout(function() { // Delay untuk memastikan konten telah dimuat
-            var hasContents = $('#leftbar_catalog').children().length > 0;
-            if (!hasContents) {
-                $('.nav-wrapper').hide();
-                $('#leftbar_tab_overview_btn').tab('show');
-            } else {
-                $('.nav-wrapper').show(); // Tampilkan kembali jika ada konten
-            }
-        }, 100);
+		$(document).ready(function () {
+    var hasContents = $('#leftbar_catalog').children().length > 0;
+    if (!hasContents) {
+	$('.nav-wrapper').hide();
+        $('#leftbar_tab_overview_btn').tab('show');
     }
 });
-
 
 </script>
 <script type="text/javascript"><!--//--><![CDATA[//><!--
