@@ -778,10 +778,21 @@ $(document).ajaxComplete(function() {
         checkContents();
     });
 
-    // Tambahkan event untuk memeriksa ketika konten dimuat
-    $(document).on('contentLoaded', function() {
-        checkContents();
-    });
+    // Tambahkan observer untuk memeriksa ketika konten dimuat
+    const targetNode = document.getElementById('leftbar_catalog');
+    const config = { childList: true, subtree: true };
+
+    const callback = function(mutationsList) {
+        for(let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                checkContents();
+                break; // Hentikan jika sudah menemukan perubahan
+            }
+        }
+    };
+
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
 
     function checkContents() {
         setTimeout(function() { // Delay untuk memastikan konten telah dimuat
@@ -795,7 +806,6 @@ $(document).ajaxComplete(function() {
         }, 100);
     }
 });
-
 
 
 </script>
