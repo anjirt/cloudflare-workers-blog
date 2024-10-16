@@ -894,26 +894,6 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 	</div>
 </div>
 	<script>
-function checkContents() {
-    var hasContents = $('#leftbar_catalog').children().length > 0;
-    if (!hasContents) {
-        $('.nav-wrapper').hide();
-        $('#leftbar_tab_overview_btn').tab('show');
-    } else {
-        $('.nav-wrapper').show();
-    }
-}
-
-$(document).ready(function () {
-    checkContents();
-
-   
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
-        checkContents();
-    });
-});
-
-		
 function updateCounts() {
     const postscountsdata = [{{ #widgetRecentlyList }}"{{ &id }}",{{ /widgetRecentlyList }}"hi"];
     let postscounts = postscountsdata[0] - 1 + 1;
@@ -934,6 +914,13 @@ $(document).ready(function() {
 
 $(document).ajaxComplete(function() {
     updateCounts();
+});
+		$(document).ready(function () {
+    var hasContents = $('#leftbar_catalog').children().length > 0;
+    if (!hasContents) {
+	$('.nav-wrapper').hide();
+        $('#leftbar_tab_overview_btn').tab('show');
+    }
 });
 
 </script>
