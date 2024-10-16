@@ -167,6 +167,9 @@ For the front end to take effect, ctrl+F5 is required to force a refresh.
 
 <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/editormd.js"></script>   
 <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/languages/en.js"></script>
+	<!-- Tambahkan script TinyMCE di bagian <head> -->
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
 <script type="text/javascript">
 	$(function() {
 		$('#myTab li:eq(0) 1').tab('show');
@@ -175,19 +178,15 @@ For the front end to take effect, ctrl+F5 is required to force a refresh.
 		//获取菜单
 		var menuJson = <!--{menuJson}-->;
 		var linkJson = <!--{linkJson}-->;
-		var mdEditor = editormd("content", {
-				// width  : "90%",
-				 height : 640,
-				path   : "https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/",
-			        placeholder : "Start editing...",
-				appendMarkdown : "", 
-				saveHTMLToTextarea : true,
-				mode : "markdown",
-				tex  : true,
-				tocm : true, 
-				codeFold : true,
-			        htmlDecode   : true
-			});
+		tinymce.init({
+    selector: '#content textarea',  // Menghubungkan dengan textarea dalam div #content
+    height: 640,  // Tinggi editor
+    plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',  // Plugin WYSIWYG untuk fitur tambahan
+    toolbar_mode: 'floating',  // Posisi toolbar
+    menubar: false,  // Sembunyikan menubar jika tidak dibutuhkan
+    branding: false  // Hilangkan branding "Powered by Tiny"
+});
+
 		//表单赋值
 		$('#createDate').val(new Date());
 		
