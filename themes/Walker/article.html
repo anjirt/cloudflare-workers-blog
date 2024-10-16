@@ -588,7 +588,9 @@ _hmt.push(['_trackPageview', document.location.pathname+document.location.search
 		<p>{{ &articleSingle.contentHtml }}</p>
 	</div>
 
-			
+			<div class="post-tags" style="display:none{{ #articleSingle.tags }}block{{ /articleSingle.tags }}">
+			<i class="fa fa-tags" aria-hidden="true"></i>
+			{{ #articleSingle.tags }}<a href='/tags/{{&.}}' target='_blank' class='tag badge badge-secondary post-meta-detail-tag'>{{&.}}</a> {{ /articleSingle.tags }}		</div>
 	</article>
 <div id="share_container">
 	<div id="share" data-initialized="true">
