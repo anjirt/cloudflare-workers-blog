@@ -771,23 +771,21 @@ $(document).ajaxComplete(function() {
     updateCounts();
 });
 	$(document).ready(function () {
+    checkContents();
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
+        setTimeout(checkContents, 100); // Tambahkan delay 100ms
+    });
+
     function checkContents() {
         var hasContents = $('#leftbar_catalog').children().length > 0;
         if (!hasContents) {
             $('.nav-wrapper').hide();
             $('#leftbar_tab_overview_btn').tab('show');
         } else {
-            $('.nav-wrapper').show();
+            $('.nav-wrapper').show(); // Tampilkan kembali jika ada konten
         }
     }
-
-    // Panggil fungsi saat halaman dimuat
-    checkContents();
-
-    // Tambahkan listener untuk event tab
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
-        checkContents();
-    });
 });
 
 
