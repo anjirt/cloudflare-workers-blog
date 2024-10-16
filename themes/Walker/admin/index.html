@@ -105,8 +105,7 @@
 				</div>
 					<a  tabindex="0"  role="button"  type="submit" id="btn_saveAddNew" class="btn btn-default" onclick="saveAddNew()">Save</a>
 					
-				<div id="editor-container"></div>
-
+				<div id="content"><textarea style="display:none;"></textarea></div>
 			</form>
 		</div>
 	</div>
@@ -168,9 +167,6 @@ For the front end to take effect, ctrl+F5 is required to force a refresh.
 
 <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/editormd.js"></script>   
 <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/languages/en.js"></script>
-<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
 <script type="text/javascript">
 	$(function() {
 		$('#myTab li:eq(0) 1').tab('show');
@@ -179,19 +175,19 @@ For the front end to take effect, ctrl+F5 is required to force a refresh.
 		//获取菜单
 		var menuJson = <!--{menuJson}-->;
 		var linkJson = <!--{linkJson}-->;
-		var quill = new Quill('#editor-container', {
-    theme: 'snow',
-    modules: {
-        toolbar: [
-            [{'header': [1, 2, false]}],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{'list': 'ordered'}, {'list': 'bullet'}],
-            ['link', 'image'],
-            ['clean']
-        ]
-    }
-});
-
+		var mdEditor = editormd("content", {
+				// width  : "90%",
+				 height : 640,
+				path   : "https://cdn.jsdelivr.net/gh/anjirt/editor.md@master/lib/",
+			        placeholder : "Start editing...",
+				appendMarkdown : "", 
+				saveHTMLToTextarea : true,
+				mode : "markdown",
+				tex  : true,
+				tocm : true, 
+				codeFold : true,
+			        htmlDecode   : true
+			});
 		//表单赋值
 		$('#createDate').val(new Date());
 		
@@ -229,54 +225,39 @@ For the front end to take effect, ctrl+F5 is required to force a refresh.
         });
     })
     //新建文章
-    function saveAddNew() {
-    // Ambil data dari Quill
-    var content = quill.root.innerHTML; // Mengambil konten HTML dari editor Quill
-    
-    // Pastikan untuk memvalidasi konten yang diperlukan
-    if ($('#WidgetMenu').val() == "" || $('#WidgetMenu').val() == null || 
-        $('#createDate').val() == "" || $('#createDate').val() == null) {
-        alert("Incomplete information");
-        return;
-    }
-
-    // Siapkan data untuk disimpan
-    var postData = {
-        id: $('#id').val(),
-        title: $('#title').val(),
-        img: $('#img').val(),
-        link: $('#link').val(),
-        createDate: $('#createDate').val(),
-        category: $('#category').val(),
-        tags: $('#tags').val(),
-        priority: $('#priority').val(),
-        changefreq: $('#changefreq').val(),
-        content: content // Menyimpan konten dari editor Quill
-    };
-
-    var postURL = "/admin/saveEdit/";
-    if ($('#id').val() == "" || $('#id').val() == null) {
-        postURL = "/admin/saveAddNew/";
-    }
-    
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: postURL,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(postData), // Mengirimkan data yang sudah disiapkan
-        success: function (result) {
-            if ("id" in result) {
-                $('#id').val(result.id);
-                $('#labelNew').text("Edit:" + result.id);
-                alert(result.msg);
-            } else {
-                alert("Fail");
-            }
+    function saveAddNew(){
+        if(
+            $('#WidgetMenu').val() == "" || $('#WidgetMenu').val() == null
+            || $('#createDate').val() == "" || $('#createDate').val() == null
+            || $('#createDate').val() == "" || $('#createDate').val() == null
+        
+        ){
+           alert("Incomplete information");
+           return;
+            
         }
-    });
-}
-
+        var postURL = "/admin/saveEdit/";
+        if ($('#id').val() == "" || $('#id').val() == null)
+            postURL=  "/admin/saveAddNew/";
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: postURL ,//url
+			contentType: "application/json; charset=utf-8",
+			data: JSON.stringify($("#addNewForm").serializeArray()), 
+            success: function (result) {
+                if ("id" in result){
+                    $('#id').val(result.id);
+					$('#labelNew').text("Edit:"+result.id);
+                    alert(result.msg);
+                }
+                else 
+                {
+					alert("Fail");
+				}
+            }
+        });
+    }
     //保存设置
     function saveConfig(){
         if(!isJSON($('#WidgetCategory').val()))
