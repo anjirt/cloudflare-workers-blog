@@ -105,7 +105,8 @@
 				</div>
 					<a  tabindex="0"  role="button"  type="submit" id="btn_saveAddNew" class="btn btn-default" onclick="saveAddNew()">Save</a>
 					
-				<div id="content"><textarea style="display:none;"></textarea></div>
+				<div id="editor-container"></div>
+
 			</form>
 		</div>
 	</div>
@@ -178,10 +179,18 @@ For the front end to take effect, ctrl+F5 is required to force a refresh.
 		//获取菜单
 		var menuJson = <!--{menuJson}-->;
 		var linkJson = <!--{linkJson}-->;
-		var quill = new Quill('#content', {
-  theme: 'snow'
+		var quill = new Quill('#editor-container', {
+    theme: 'snow',
+    modules: {
+        toolbar: [
+            [{'header': [1, 2, false]}],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{'list': 'ordered'}, {'list': 'bullet'}],
+            ['link', 'image'],
+            ['clean']
+        ]
+    }
 });
-
 
 		//表单赋值
 		$('#createDate').val(new Date());
