@@ -773,20 +773,29 @@ $(document).ajaxComplete(function() {
 	$(document).ready(function () {
     checkContents();
 
+    // Ketika tab ditampilkan
     $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
-        setTimeout(checkContents, 100); // Tambahkan delay 100ms
+        checkContents();
+    });
+
+    // Tambahkan event untuk memeriksa ketika konten dimuat
+    $(document).on('contentLoaded', function() {
+        checkContents();
     });
 
     function checkContents() {
-        var hasContents = $('#leftbar_catalog').children().length > 0;
-        if (!hasContents) {
-            $('.nav-wrapper').hide();
-            $('#leftbar_tab_overview_btn').tab('show');
-        } else {
-            $('.nav-wrapper').show(); // Tampilkan kembali jika ada konten
-        }
+        setTimeout(function() { // Delay untuk memastikan konten telah dimuat
+            var hasContents = $('#leftbar_catalog').children().length > 0;
+            if (!hasContents) {
+                $('.nav-wrapper').hide();
+                $('#leftbar_tab_overview_btn').tab('show');
+            } else {
+                $('.nav-wrapper').show(); // Tampilkan kembali jika ada konten
+            }
+        }, 100);
     }
 });
+
 
 
 </script>
