@@ -220,39 +220,54 @@ For the front end to take effect, ctrl+F5 is required to force a refresh.
         });
     })
     //新建文章
-    function saveAddNew(){
-        if(
-            $('#WidgetMenu').val() == "" || $('#WidgetMenu').val() == null
-            || $('#createDate').val() == "" || $('#createDate').val() == null
-            || $('#createDate').val() == "" || $('#createDate').val() == null
-        
-        ){
-           alert("Incomplete information");
-           return;
-            
-        }
-        var postURL = "/admin/saveEdit/";
-        if ($('#id').val() == "" || $('#id').val() == null)
-            postURL=  "/admin/saveAddNew/";
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: postURL ,//url
-			contentType: "application/json; charset=utf-8",
-			data: JSON.stringify($("#addNewForm").serializeArray()), 
-            success: function (result) {
-                if ("id" in result){
-                    $('#id').val(result.id);
-					$('#labelNew').text("Edit:"+result.id);
-                    alert(result.msg);
-                }
-                else 
-                {
-					alert("Fail");
-				}
-            }
-        });
+    function saveAddNew() {
+    // Ambil data dari Quill
+    var content = quill.root.innerHTML; // Mengambil konten HTML dari editor Quill
+    
+    // Pastikan untuk memvalidasi konten yang diperlukan
+    if ($('#WidgetMenu').val() == "" || $('#WidgetMenu').val() == null || 
+        $('#createDate').val() == "" || $('#createDate').val() == null) {
+        alert("Incomplete information");
+        return;
     }
+
+    // Siapkan data untuk disimpan
+    var postData = {
+        id: $('#id').val(),
+        title: $('#title').val(),
+        img: $('#img').val(),
+        link: $('#link').val(),
+        createDate: $('#createDate').val(),
+        category: $('#category').val(),
+        tags: $('#tags').val(),
+        priority: $('#priority').val(),
+        changefreq: $('#changefreq').val(),
+        content: content // Menyimpan konten dari editor Quill
+    };
+
+    var postURL = "/admin/saveEdit/";
+    if ($('#id').val() == "" || $('#id').val() == null) {
+        postURL = "/admin/saveAddNew/";
+    }
+    
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: postURL,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(postData), // Mengirimkan data yang sudah disiapkan
+        success: function (result) {
+            if ("id" in result) {
+                $('#id').val(result.id);
+                $('#labelNew').text("Edit:" + result.id);
+                alert(result.msg);
+            } else {
+                alert("Fail");
+            }
+        }
+    });
+}
+
     //保存设置
     function saveConfig(){
         if(!isJSON($('#WidgetCategory').val()))
